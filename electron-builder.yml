@@ -1,0 +1,21 @@
+productName: "IServIO"
+appId: "net.davidotek.iservio"
+
+asar: true
+
+mac:
+  category: "public.app-category.productivity"
+  icon: "iservio.icns"
+  target:
+    - "dmg"
+
+win:
+  icon: "iservio.ico"
+  target:
+    - "zip"
+    - "nsis"
+
+linux:
+  category: "education"
+  target:
+    - "AppImage"

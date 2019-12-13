@@ -4,7 +4,9 @@
   "description": "Inoffizieller IServ Client für Windows, Linux und macOS!",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,8 @@
   },
   "homepage": "https://github.com/DavidoTek/IServIO#readme",
   "devDependencies": {
-    "electron": "^7.1.4"
+    "electron": "^7.1.4",
+    "electron-builder": "^21.2.0"
   },
   "dependencies": {
     "electron-json-config": "^1.5.3"
