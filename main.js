@@ -21,7 +21,7 @@ function createWindow () {
     if (config.has('iservurl')) {
         mainWindow.loadURL(config.get('iservurl', ''))
     } else {
-        mainWindow.loadFile('index.html')
+        mainWindow.loadFile('settings.html')
     }
 
     var menu = Menu.buildFromTemplate([
@@ -34,14 +34,14 @@ function createWindow () {
                         if (config.has('iservurl')) {
                             mainWindow.loadURL(config.get('iservurl', ''))
                         } else {
-                            mainWindow.loadFile('index.html')
+                            mainWindow.loadFile('settings.html')
                         }
                     }
                 },
                 {
                     label: 'Settings',
                     click() {
-                        mainWindow.loadFile('index.html')
+                        mainWindow.loadFile('settings.html')
                     }
                 },
                 {
