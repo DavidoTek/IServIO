@@ -1,0 +1,22 @@
+{
+  "name": "iservio",
+  "version": "1.0.0",
+  "description": "Inoffizieller IServ Client für Windows, Linux und macOS!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidoTek/IServIO.git"
+  },
+  "author": "DavidoTek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidoTek/IServIO/issues"
+  },
+  "homepage": "https://github.com/DavidoTek/IServIO#readme",
+  "devDependencies": {
+    "electron": "^7.1.4"
+  }
+}
