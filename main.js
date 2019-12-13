@@ -27,6 +27,16 @@ function createWindow () {
             label: 'File',
             submenu: [
                 {
+                    label: 'Home',
+                    click() {
+                        if (config.has('iservurl')) {
+                            mainWindow.loadURL(config.get('iservurl', ''))
+                        } else {
+                            mainWindow.loadFile('index.html')
+                        }
+                    }
+                },
+                {
                     label: 'Settings',
                     click() {
                         mainWindow.loadFile('index.html')
