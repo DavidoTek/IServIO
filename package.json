@@ -18,5 +18,8 @@
   "homepage": "https://github.com/DavidoTek/IServIO#readme",
   "devDependencies": {
     "electron": "^7.1.4"
+  },
+  "dependencies": {
+    "electron-json-config": "^1.5.3"
   }
 }

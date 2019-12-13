@@ -1,0 +1,32 @@
+html {
+    background-color: #dddddd;
+}
+
+.centerdiv {
+    position: relative;
+    margin: auto;
+    width: 400px;
+    height: 240px;
+    border: 3px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 4px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#iservurltext {
+    width: 80%;
+}
+
+#submitbutton {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+#infotext {
+    position: absolute;
+    right: 8px;
+    bottom: 0px;
+}
