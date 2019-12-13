@@ -42,6 +42,12 @@ function createWindow () {
                         mainWindow.loadFile('index.html')
                     }
                 },
+                {
+                    label: 'About',
+                    click() {
+                        mainWindow.loadFile('about.html')
+                    }
+                },
                 {type: 'separator'},
                 {
                     label: 'Exit',

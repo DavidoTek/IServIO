@@ -30,3 +30,9 @@ html {
     right: 8px;
     bottom: 0px;
 }
+
+#iservioicon {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+}
