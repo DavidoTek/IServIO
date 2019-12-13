@@ -6,10 +6,12 @@ let mainWindow
 
 function createWindow () {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 640,
+        width: config.has('winwidth') ? config.get('winwidth', 800) : 800,
+        height: config.has('winheight') ? config.get('winheight', 640) : 640,
         minWidth: 800,
         minHeight: 600,
+        x: config.has('winx') ? config.get('winx', 200) : 200,
+        y: config.has('winy') ? config.get('winy', 200) : 200,
         icon: path.join(__dirname, '/iservio.png'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
@@ -42,6 +44,16 @@ function createWindow () {
                         mainWindow.loadFile('index.html')
                     }
                 },
+                {
+                    label: 'Save window size',
+                    click() {
+                        config.set('winwidth', mainWindow.getBounds().width)
+                        config.set('winheight', mainWindow.getBounds().height)
+                        config.set('winx', mainWindow.getBounds().x)
+                        config.set('winy', mainWindow.getBounds().y)
+                    }
+                },
+                {type: 'separator'},
                 {
                     label: 'About',
                     click() {
