@@ -15,6 +15,11 @@ win:
     - "zip"
     - "nsis"
 
+nsis:
+    oneClick: false
+    perMachine: false
+    allowToChangeInstallationDirectory: true
+
 linux:
   category: "education"
   target:
