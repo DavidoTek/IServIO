@@ -10,6 +10,7 @@ function createWindow () {
         height: config.has('winheight') ? config.get('winheight', 640) : 640,
         minWidth: 800,
         minHeight: 600,
+        frame: false,
         x: config.has('winx') ? config.get('winx', 200) : 200,
         y: config.has('winy') ? config.get('winy', 200) : 200,
         icon: path.join(__dirname, '/iservio.png'),
@@ -20,6 +21,9 @@ function createWindow () {
 
     if (config.has('iservurl')) {
         mainWindow.loadURL(config.get('iservurl', ''))
+        mainWindow.webContents.on('did-finish-load', function () {
+            mainWindow.webContents.insertCSS('#topbar {-webkit-app-region: drag;}');    // Make the IServ title bar usable as the titlebar
+        })
     } else {
         mainWindow.loadFile('settings.html')
     }
