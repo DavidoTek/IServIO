@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DavidoTek/IServIO#readme",
   "devDependencies": {
-    "electron": "^7.1.4",
+    "electron": "^7.2.4",
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
