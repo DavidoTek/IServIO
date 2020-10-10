@@ -1,6 +1,6 @@
 {
   "name": "iservio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Inoffizieller IServ Client für Windows, Linux und macOS!",
   "main": "main.js",
   "scripts": {
