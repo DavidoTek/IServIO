@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, ipcMain} = require('electron')
+const {app, BrowserWindow, Menu, ipcMain, shell} = require('electron')
 const path = require('path')
 const config = require('electron-json-config')
 
@@ -75,6 +75,14 @@ function createWindow () {
     mainWindow.on('closed', function () {
         mainWindow = null
     })
+    
+    mainWindow.webContents.on('new-window', function(e, url) {
+        if('file://' === url.substr(0, 'file://'.length)) {
+            return;
+        }     
+        e.preventDefault();
+        shell.openExternal(url);
+    });
 }
 
 app.on('ready', createWindow)
