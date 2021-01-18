@@ -1,6 +1,7 @@
 const {app, BrowserWindow, Menu, ipcMain, shell} = require('electron')
 const path = require('path')
 const config = require('electron-json-config')
+const fs = require('fs');
 
 let mainWindow
 
@@ -20,6 +21,11 @@ function createWindow () {
 
     if (config.has('iservurl')) {
         mainWindow.loadURL(config.get('iservurl', ''))
+        mainWindow.webContents.on('did-finish-load', function () {
+            if(config.get('darkmode', false)) {
+                enableDarkMode();
+            }
+        })
     } else {
         mainWindow.loadFile('settings.html')
     }
@@ -101,6 +107,16 @@ app.on('activate', function () {
 })
 
 ipcMain.on('submitchange', (event, arg) => {
-    config.set('iservurl', arg)
-    mainWindow.loadURL(arg)
+    console.log(arg)
+    config.set('iservurl', arg[0])
+    config.set('darkmode', arg[1])
+    mainWindow.loadURL(arg[0])
 })
+
+function enableDarkMode() {
+    fs.readFile(__dirname + '/styles/iserv-darkmode.css', 'utf-8', function(err, data) {
+        if(!err) {
+            mainWindow.webContents.insertCSS(data.replace('/\s{2,10}/g', ' ').trim())
+        }
+    })
+}
