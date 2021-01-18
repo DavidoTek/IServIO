@@ -1,0 +1,14 @@
+body,li,a,.panel,.form-control,#sidebar-wrapper,table,.content-header,.legal-notice,#nav-edit,.sidebar-nav,.header-meta,.header-breadcrumb,.breadcrumb,.panel-heading
+{
+    color: rgba(232, 230, 227) !important;background-color: rgb(24, 26, 27) !important;
+}
+
+.panel-primary,.panel-title
+{
+    background-color: rgb(12, 48, 70) !important;
+}
+
+.btn-default
+{
+    background-color: #000000 !important;
+}
